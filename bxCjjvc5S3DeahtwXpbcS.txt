@@ -1,0 +1,72 @@
+Experiment 8: Advanced Git Operations - Cherry-Pick a Range of Commits
+======================================================================
+
+This guide provides Git Bash commands to cherry-pick a range of commits from a source branch to the current branch.
+
+----------------------------------------------------------------------
+Step 1: Initialize a new Git repository
+----------------------------------------------------------------------
+cd /c/Users/Keerthana/Documents
+mkdir cherry-pick-lab
+cd cherry-pick-lab
+git init
+
+----------------------------------------------------------------------
+Step 2: Create a source branch and make multiple commits
+----------------------------------------------------------------------
+git checkout -b source-branch
+
+echo "Line A" > file1.txt
+git add file1.txt
+git commit -m "Commit A on source-branch"
+
+echo "Line B" > file2.txt
+git add file2.txt
+git commit -m "Commit B on source-branch"
+
+echo "Line C" > file3.txt
+git add file3.txt
+git commit -m "Commit C on source-branch"
+
+----------------------------------------------------------------------
+Step 3: View commit history and copy commit hashes
+----------------------------------------------------------------------
+git log --oneline
+
+# Example output:
+# c3c3c3c Commit C on source-branch
+# b2b2b2b Commit B on source-branch
+# a1a1a1a Commit A on source-branch
+
+----------------------------------------------------------------------
+Step 4: Switch to master branch
+----------------------------------------------------------------------
+git checkout -b master
+
+----------------------------------------------------------------------
+Step 5: Cherry-pick a range of commits from source-branch
+----------------------------------------------------------------------
+git cherry-pick a1a1a1a^..c3c3c3c
+
+# Replace a1a1a1a and c3c3c3c with actual commit hashes
+
+----------------------------------------------------------------------
+Step 6: Resolve conflicts if any occur
+----------------------------------------------------------------------
+# Open conflicted files and manually resolve conflicts
+# Then mark them as resolved:
+git add <filename>
+
+# Commit the resolved cherry-pick
+git commit -m "Resolved conflict during cherry-pick"
+
+# If you want to skip the conflicting commit:
+git cherry-pick --skip
+
+# To abort the cherry-pick process:
+git cherry-pick --abort
+
+----------------------------------------------------------------------
+Step 7: Verify the cherry-picked commits
+----------------------------------------------------------------------
+git log --oneline
