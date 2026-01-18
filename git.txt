@@ -1,0 +1,260 @@
+﻿1,2 
+
+
+mkdir git-lab
+cd git-lab
+git init
+
+
+echo "Initial content" > file.txt
+git add file.txt
+git commit -m "Initial commit on master"
+
+
+git checkout -b feature-branch
+
+
+echo "Feature branch update" >> file.txt
+git add file.txt
+git commit -m "Update file.txt in feature-branch"
+
+
+git checkout master
+
+
+git merge feature-branch -m "Merge feature-branch into master with custom message"
+
+
+git branch -d feature-branch
+
+
+3.
+mkdir stash-demo
+cd stash-demo
+git init
+
+
+echo "Initial content" > file.txt
+git add file.txt
+git commit -m "Initial commit"
+
+
+echo "Uncommitted changes" >> file.txt
+
+
+git stash save "Work in progress before switching branch"
+
+
+git checkout -b new-feature
+
+
+git stash apply
+
+
+# git stash pop
+
+
+git add file.txt
+git commit -m "Apply stashed changes in new-feature branch"
+
+
+#git stash drop
+
+
+4.
+cd “C:\\......”
+clone https://github.com/msk-656/git-lab.git
+
+
+5.
+
+
+6.
+mkdir merge-demo
+cd merge-demo
+git init
+
+
+echo "Initial content" > file.txt
+git add file.txt
+git commit -m "Initial commit on master"
+
+
+git checkout -b feature-branch
+
+
+echo "Feature branch changes" >> file.txt
+git add file.txt
+git commit -m "Update file.txt in feature branch"
+
+
+git checkout master
+git merge feature-branch -m "Merging feature branch into master with custom message"
+7. 
+cd "C:\Users\keerthana\OneDrive\Documents\git-lab"
+
+
+git init
+
+
+echo "Initial version " > version1.txt
+
+
+git add version1.txt
+
+
+git commit -m "second commit v2.0"
+
+
+[main c25118c] second commit v2.0
+ 1 file changed, 1 insertion(+)
+ create mode 100644 version1.txt
+
+
+git log --oneline
+c25118c (HEAD -> main) second commit v2.0
+5c54cbb (origin/main, origin/HEAD) Initial commit
+
+
+git tag v1.0 c25118c
+
+
+git tag v2.0 5c54cbb
+
+
+git tag v1.0 HEAD
+
+
+git tag
+v1.0
+v2.0
+
+
+git show v1.0
+
+
+git show v2.0
+
+
+git push --tags
+9. 
+cd /c/Users/Keerthana/Documents
+mkdir git-history-lab
+cd git-history-lab
+git init
+echo "experiment  content "> histort.txt
+
+
+git add histort.txt
+git commit -m "Initial commit for experiment 9"
+echo "More history details" >> histort
+git add histort.txt
+git commit -m "Updated history.txt with more details"
+git log --oneline
+//7d90647 (HEAD -> master) 
+ git show 7d90647
+git log -n 1 --pretty=format:"%-%an,%ar:%s" 7d90647
+//Keerthana,3 minutes ago:Updated history.txt with more details
+
+
+10. 
+cd /c/Users/Keerthana/Documents
+mkdir experiment10-history
+cd experiment10-history
+git init
+
+
+git config user.name "JonhDoe"
+git config user.email "john@example.com"
+echo "Commit A" > file1.txt
+git add file1.txt
+GIT_COMMITTER_DATE="2023-01-10T10:00:00" git commit -m "Commit A by JohnDoe" --date="2023-01-10T10:00:00"
+
+
+echo "Commit B" > file2.txt
+git add file2.txt
+GIT_COMMITTER_DATE="2023-06-15T12:00:00" git commit -m "Commit B by JohnDoe" --date="2023-06-15T12:00:00"
+
+
+echo "Commit C" > file3.txt
+git add file3.txt
+GIT_COMMITTER_DATE="2023-11-20T14:00:00" git commit -m "Commit C by JohnDoe" --date="2023-11-20T14:00:00"
+
+
+git log --author="JonhDoe" --since="2023-01-01" --until="2023-12-31"
+
+
+11.  
+cd /c/Users/Keerthana/Documents
+mkdir exp11-history
+cd exp11-history
+git init
+
+
+echo "commit 1" >f1.txt
+git add f1.txt
+git commit -m "commit 1 for exp 11"
+
+
+echo "commit 2" > f2.txt
+git add f2.txt
+git commit -m "commit 2 for exp 11"
+
+
+echo "commit 3" > f3.txt
+git add f3.txt
+git commit -m "commit 3 for exp 11"
+
+
+echo "commit 4 " >f4.txt
+git add f4.txt
+git commit -m "commit 4 for exp 11"
+
+
+echo "commit 5 " > f5.txt
+git add f5.txt
+git commit -m "commit 5 for exp 11"
+
+
+git log -n 5
+git log -n 5 –oneline
+
+
+
+
+12.
+
+
+cd /c/Users/Keerthana/Documents
+mkdir experiment12-history
+cd experiment12-history
+git init
+
+
+echo "Commit A" > file1.txt
+git add file1.txt
+git commit -m "Commit A"
+
+
+echo "Commit B" > file2.txt
+git add file2.txt
+git commit -m "Commit B"
+
+
+echo "Commit C" > file3.txt
+git add file3.txt
+git commit -m "Commit C"
+
+
+
+
+git log –-oneline
+
+
+git revert b2b2b2 –-no-edit
+
+
+git reset - -hard b2b2
+
+
+git log –-oneline
