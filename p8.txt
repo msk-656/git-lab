@@ -1,9 +1,5 @@
 Experiment 8: Advanced Git Operations - Cherry-Pick a Range of Commits
-======================================================================
 
-This guide provides Git Bash commands to cherry-pick a range of commits from a source branch to the current branch.
-
-----------------------------------------------------------------------
 Step 1: Initialize a new Git repository
 ----------------------------------------------------------------------
 cd /c/Users/Keerthana/Documents
@@ -47,22 +43,13 @@ git checkout -b master
 Step 5: Cherry-pick a range of commits from source-branch
 ----------------------------------------------------------------------
 git cherry-pick a1a1a1a^..c3c3c3c
-
-# Replace a1a1a1a and c3c3c3c with actual commit hashes
-
-----------------------------------------------------------------------
 Step 6: Resolve conflicts if any occur
 ----------------------------------------------------------------------
-# Open conflicted files and manually resolve conflicts
-# Then mark them as resolved:
 git add <filename>
-
 # Commit the resolved cherry-pick
 git commit -m "Resolved conflict during cherry-pick"
-
 # If you want to skip the conflicting commit:
 git cherry-pick --skip
-
 # To abort the cherry-pick process:
 git cherry-pick --abort
 
