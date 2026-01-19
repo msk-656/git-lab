@@ -1,3 +1,79 @@
+
+
+# Experiment 5: Fetch the latest changes from a remote repository and rebase your local branch onto the updated remote branch
+
+
+
+# Step 1: Clone the remote repository
+
+cd /c/Users/Keerthana/Documents
+
+git clone https://github.com/keerthana/git-lab.git
+
+cd git-lab
+
+
+
+# Step 2: Create and switch to a new local branch
+
+git checkout -b feature-branch
+
+echo "Experiment 5 content" > experiment5.txt
+
+git add experiment5.txt
+
+git commit -m "Added experiment5.txt for Experiment 5"
+
+
+
+# Step 3: Push your branch to GitHub
+
+git push -u origin feature-branch
+
+
+
+# Step 4: Fetch the latest changes from the remote repository
+
+git fetch
+
+
+
+# Step 5: Rebase your local branch onto the updated remote branch
+
+git rebase origin/feature-branch
+
+
+
+# Optional: Use interactive rebase to modify commits
+
+# git rebase -i origin/feature-branch
+
+
+
+# Step 6: Resolve conflicts if any
+
+# Open the conflicted file, fix the conflict, then:
+
+git add <conflicted-file>
+
+git rebase --continue
+
+
+
+# To abort the rebase process:
+
+# git rebase --abort
+
+
+
+# Step 7: Force-push the rebased branch to the remote repository
+
+git push origin feature-branch --force
+
+
+
+
+
 Experiment 8: Advanced Git Operations - Cherry-Pick a Range of Commits
 
 Step 1: Initialize a new Git repository
